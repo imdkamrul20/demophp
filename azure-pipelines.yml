@@ -74,6 +74,5 @@ stages:
                 $(Pipeline.Workspace)/manifests/service.yml
               imagePullSecrets: |
                 $(imagePullSecret)
-              imageName: $(containerRegistry)/$(imageRepository):$(tag)
-#              containers: |
-#                $(containerRegistry)/$(imageRepository):$(tag)
+              containers: |
+                $(containerRegistry)/$(imageRepository):$(tag)
