@@ -15,11 +15,9 @@ spec:
     spec:
       containers:
         - name: demo-php
-          image: azurebs.azurecr.io/demo-php
+          image: azurebs.azurecr.io/demo-php:$(tag)
           ports:
             - containerPort: 80
               protocol: TCP
           imagePullPolicy: IfNotPresent
       restartPolicy: Always
-      imagePullSecrets:
-        - name: azurebs15003624-auth
