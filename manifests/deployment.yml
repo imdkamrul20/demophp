@@ -1,0 +1,25 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: demo-php
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-php
+  template:
+    metadata:
+      labels:
+        app: demo-php
+    spec:
+      containers:
+        - name: demo-php
+          image: azurebs.azurecr.io/demo-php
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      imagePullSecrets:
+        - name: azurebs10160dc1-auth
