@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-php
+  namespace: default
+  labels:
+    app: demo-php
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 32085
+  selector:
+    app: demo-php
+  type: LoadBalancer
