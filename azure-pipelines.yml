@@ -75,7 +75,7 @@ stages:
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: 
-                - name: demo-php
+                  name: demo-php
                   image: $(containerRegistry)/$(imageRepository):$(tag)
 #              containers: |
 #                $(containerRegistry)/$(imageRepository):$(tag)
