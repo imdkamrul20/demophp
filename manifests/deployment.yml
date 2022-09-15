@@ -22,4 +22,4 @@ spec:
           imagePullPolicy: IfNotPresent
       restartPolicy: Always
       imagePullSecrets:
-        - name: azurebs10160dc1-auth
+        - name: azurebs15003624-auth
