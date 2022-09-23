@@ -15,10 +15,12 @@ spec:
     spec:
       containers:
         - name: demo-php
-          image: nginx:alpine
+          image: azurebs.azurecr.io/demophp:32
           ports:
             - containerPort: 80
               protocol: TCP
           imagePullPolicy: IfNotPresent
+      imagePullSecrets:
+        - name: acr-secret
       restartPolicy: Always
 # This is demo project
