@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: demo-php
-          image: azurebs.azurecr.io/demophp:4334757ee34b9a4d59da43d83c05a9f2ad591ab3
+          image: azurebs.azurecr.io/demophp:99ea660ed85a230583edbfce0fecb941a1f485b4
           ports:
             - containerPort: 80
               protocol: TCP
