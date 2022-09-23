@@ -47,6 +47,7 @@ pipeline {
                 sh "git add ."
 	        sh "git commit -am 'Done by Jenkins version replacement'"
 		sh "git push https://${GIT_USERNAME}:${encodedPassword}@github.com/${GIT_USERNAME}/demophp.git"
+		}
             }
         }
     }
