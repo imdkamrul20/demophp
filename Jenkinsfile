@@ -33,7 +33,6 @@ pipeline {
                 sh "cat manifests/deployment.yml"
 		sh "chmod +x changeTag.sh"
                 sh "./changeTag.sh ${DOCKER_TAG}"
-#                sh "sed -i 'azurebs.azurecr.io/demophp.*+azurebs.azurecr.io/demophp:${DOCKERTAG}+g' manifests/deployment.yml"
                 sh "cat manifests/deployment.yml"
                 sh "git add ."
 	        sh "git commit -am 'Done by Jenkins version replacement'"
