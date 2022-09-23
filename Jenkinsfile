@@ -34,13 +34,13 @@ pipeline {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                 withCredentials([usernamePassword(credentialsId: 'GitToken', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                 def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
-                sh "cat manifests/deployment.yml"
+                sh "cat manifests/deployment-tag.yml"
 		sh "chmod +x changeTag.sh"
                 sh "./changeTag.sh ${DOCKER_TAG}"
-//		sh "chmod +x manifests/deployment.yml"
+//		sh "chmod +x manifests/deployment-tag.yml"
 //		sh "sed 's/tagVersion/$1/g' manifests/deployment.yml"
-		sh "rm -rf ./manifests/deployment.yml"
-		sh "mv ./manifests/deployment-tag.yml ./manifests/deployment.yml"
+//		sh "rm -rf ./manifests/deployment.yml"
+//		sh "mv ./manifests/deployment-tag.yml ./manifests/deployment.yml"
                 sh "cat manifests/deployment.yml"
 		sh "git config --global user.email imd.kamrul20@gmail.com"
                 sh "git config --global user.name imdkamrul20"    
