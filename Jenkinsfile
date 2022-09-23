@@ -31,8 +31,10 @@ pipeline {
         stage('Update GIT'){
             steps{
                 sh "cat manifests/deployment.yml"
-		sh "chmod +x changeTag.sh"
-                sh "./changeTag.sh ${DOCKER_TAG}"
+//		sh "chmod +x changeTag.sh"
+//                sh "./changeTag.sh ${DOCKER_TAG}"
+		sh "chmod +x manifests/deployment.yml"
+		sh "sed "s/tagVersion/$1/g" manifests/deployment.yml"
                 sh "cat manifests/deployment.yml"
 		sh "git config --global user.email imd.kamrul20@gmail.com"
                 sh "git config --global user.name imdkamrul20"    
