@@ -30,11 +30,11 @@ pipeline {
 
         stage('Update GIT'){
             steps{
-                sh "manifests/deployment.yml"
+                sh "cat manifests/deployment.yml"
                 sh "sed -i 'azurebs.azurecr.io/demophp.*+azurebs.azurecr.io/demophp:${DOCKERTAG}+g' manifests/deployment.yml"
                 sh "manifests/deployment.yml"
                 sh "git add ."
-	            sh "git commit -am 'Done by Jenkins version replacement'"
+	        sh "git commit -am 'Done by Jenkins version replacement'"
             }
         }
     }
