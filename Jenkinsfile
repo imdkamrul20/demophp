@@ -28,7 +28,7 @@ pipeline {
             }
         }
 
-        stage('Update GIT){
+        stage('Update GIT'){
             steps{
                 sh "manifests/deployment.yml"
                 sh "sed -i 'azurebs.azurecr.io/demophp.*+azurebs.azurecr.io/demophp:${DOCKERTAG}+g' manifests/deployment.yml"
