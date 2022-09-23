@@ -47,7 +47,7 @@ pipeline {
                 sh "git add ."
 	        sh "git commit -am 'Done by Jenkins version replacement'"
 //	        sh "git remote add origin https://${GIT_USERNAME}:${encodedPassword}@github.com/${GIT_USERNAME}/demophp.git"
-		sh "git push https://${GIT_USERNAME}:${encodedPassword}@github.com/${GIT_USERNAME}/demophp.git"
+		sh "git push https://${GIT_USERNAME}:${encodedPassword}@github.com/${GIT_USERNAME}/demophp.git HEAD:master"
 //		sh "git push -u origin master"
 			
 		}
