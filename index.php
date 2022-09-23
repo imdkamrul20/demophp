@@ -1,6 +1,5 @@
 <p>
-	Example timer in PHP 
-	<b>This is demo app</b>
+	Example timer in PHP Demo
 </p>
 
 
