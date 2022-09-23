@@ -34,6 +34,8 @@ pipeline {
 		sh "chmod +x changeTag.sh"
                 sh "./changeTag.sh ${DOCKER_TAG}"
                 sh "cat manifests/deployment.yml"
+		sh "git config --global user.email imd.kamrul20@gmail.com"
+                sh "git config --global user.name imdkamrul20"    
                 sh "git add ."
 	        sh "git commit -am 'Done by Jenkins version replacement'"
             }
