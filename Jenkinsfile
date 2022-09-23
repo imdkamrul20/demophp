@@ -30,6 +30,10 @@ pipeline {
 
         stage('Update GIT'){
             steps{
+	      script {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                withCredentials([usernamePassword(credentialsId: 'example-secure', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                 sh "cat manifests/deployment.yml"
 		sh "chmod +x changeTag.sh"
                 sh "./changeTag.sh ${DOCKER_TAG}"
