@@ -21,6 +21,6 @@ spec:
               protocol: TCP
           imagePullPolicy: Always
       imagePullSecrets:
-        - name: azurebs103922641-auth
+        - name: acr-secret
       restartPolicy: Always
 # This is demo project
